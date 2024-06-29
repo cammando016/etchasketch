@@ -10,11 +10,20 @@
     <body>
         <div class="content">
             <div class="page-header">
-                <h1>Etch-A-Sketch</h1>
+                <h1>Etch-A-Sketch</h1>  
             </div>
 
-            <div class="working-area">
-                <p>Placeholder Text</p>
+            <div class="grid"></div>
+
+            <div class="grid-size-input">
+                <div class="slider-container">
+                    <p>1</p>
+                    <input type="range" min ="1" max="100" class="slider" id="grid-slider">
+                    <p>100</p>
+                </div>
+                <div>
+                    <button class="button" id="create-grid">Create New Grid</button>
+                </div>
             </div>
         </div>
     </body>
