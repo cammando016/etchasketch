@@ -33,7 +33,6 @@ function createUserGrid(squares) {
         while (j < squares) {
             const gridCell = document.createElement("div");
             gridCell.classList.add("grid-cell");
-            //gridCell.setAttribute("onmouseover", "changeBackground()")
             gridRow.appendChild(gridCell);
             j++;
         }
@@ -48,17 +47,24 @@ createGrid();
 const gridButton = document.querySelector("#create-grid");
 gridButton.addEventListener("click", () => {createUserGrid(document.querySelector("#grid-slider").value)});
 
-// const gridDiv = document.querySelector(".grid");
-// gridDiv.addEventListener(
-//     "mouseover",
-//     (event) => {
-//         event.target.style.color = "grey";
-//     }
-// )
-
 const grid = document.querySelector(".grid");
 grid.addEventListener('mouseover', (event) => {
     let target = event.target;
-    target.style.backgroundColor = "grey";
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    target.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+
     event.stopPropagation();
 })
+
+const clearGridButton = document.querySelector("#clear-grid");
+clearGridButton.addEventListener('click', () => {clearGrid()});
+
+function clearGrid() {
+    const gridCells = document.querySelectorAll(".grid-cell");
+    gridCells.forEach((gridCell, key) => {
+        gridCell.style.backgroundColor = "white";
+    })
+}

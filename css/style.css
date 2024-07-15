@@ -1,4 +1,4 @@
-.content, .page-header, .grid-row, .grid, .grid-size-input, .slider-container {
+.content, .page-header, .grid-row, .grid, .grid-size-input, .slider-container, .buttons {
     display: flex;
 }
 
@@ -21,6 +21,7 @@
     height: 80vh;
     width: 80vh;
     margin-bottom: 10px;
+    background-color: black;
 }
 
 .grid-row, .grid-cell {
@@ -31,15 +32,10 @@
 .grid-cell {
     border-style: solid;
     border-color: black;
-}
-
-.grid-cell {
     border-width: 1px;
+    background-color: white;
+    opacity: 1;
 }
-
-/* .grid-cell:hover {
-    background-color: grey;
-} */
 
 .grid-size-input {
     width: 80vh;
@@ -48,9 +44,13 @@
 }
 
 .slider-container {
-    width: 80%;
+    width: 60%;
 }
 
 .slider {
     width: 80%
+}
+
+.buttons {
+    justify-content: space-between;
 }
